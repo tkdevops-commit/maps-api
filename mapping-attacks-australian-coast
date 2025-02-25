@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia Map</title>
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
 
+    <h2>Interactive Australian Map</h2>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // Map centered on Australia
+            const australia = { lat: -25.2744, lng: 133.7751 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: australia,
+            });
+
+            // Marker in Sydney
+            const sydney = { lat: -33.8688, lng: 151.2093 };
+            new google.maps.Marker({
+                position: sydney,
+                map: map,
+                title: "Sydney, Australia"
+            });
+        }
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+</body>
+</html>
