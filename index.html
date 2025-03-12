@@ -90,6 +90,10 @@
                 alert("Geolocation is not supported by your browser.");
             }
         }
+
+        function locateUser () {
+            map.SetMapTypeId(type);
+        }
     </script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
